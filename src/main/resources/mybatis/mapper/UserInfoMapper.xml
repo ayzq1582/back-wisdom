@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhy.wisdom.dao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zhy.wisdom.entity.UserInfo">
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="user_pin" jdbcType="VARCHAR" property="userPin" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+    <result column="doctor_id" jdbcType="BIGINT" property="doctorId" />
+    <result column="doctor_code" jdbcType="VARCHAR" property="doctorCode" />
+    <result column="password_expiration_time" jdbcType="TIMESTAMP" property="passwordExpirationTime" />
+    <result column="yn" jdbcType="TINYINT" property="yn" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zhy.wisdom.entity.UserInfo">
+    insert into user_info (user_id, username, user_pin, 
+      password, token, doctor_id, 
+      doctor_code, password_expiration_time, yn, 
+      created, updated)
+    values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{userPin,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}, #{doctorId,jdbcType=BIGINT}, 
+      #{doctorCode,jdbcType=VARCHAR}, #{passwordExpirationTime,jdbcType=TIMESTAMP}, #{yn,jdbcType=TINYINT}, 
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhy.wisdom.entity.UserInfo">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="userPin != null">
+        user_pin,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="token != null">
+        token,
+      </if>
+      <if test="doctorId != null">
+        doctor_id,
+      </if>
+      <if test="doctorCode != null">
+        doctor_code,
+      </if>
+      <if test="passwordExpirationTime != null">
+        password_expiration_time,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="updated != null">
+        updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userPin != null">
+        #{userPin,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorId != null">
+        #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="doctorCode != null">
+        #{doctorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="passwordExpirationTime != null">
+        #{passwordExpirationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=TINYINT},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
