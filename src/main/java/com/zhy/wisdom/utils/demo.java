@@ -21,7 +21,7 @@ public class demo {
     }
 
     public static void main(String[] args) {
-        String key = "ce97a456-5e9e-485d-b30b-5b101dd86e28";
+        String key = "ce97a456-5e9e-485d-b30b-5b101dd86e28da";
         String body = "{\"total\":1,\"type\":11,\"items\":[{\"changeTime\":1422201600000,\"companyId\":69392121,\"天眼查专业版 监控信息推送服务说明15 contentAfter\":\"预包装食品兼散装食品、乳制品零售（依法须经批准的项目经相关部门批准后 方可开展经营活动）、卷烟、雪茄烟（以烟草专卖零售许可证有效期为准）、日用百货、日杂 批发兼零售。\",\"companyName\":\"嘉峪关市佳乐综合商店\",\"contentBefore\":\"糖烟酒、日用杂 品 、 百 货 、 干 鲜 果 零 售 \",\"changeItem\":\" 经 营 范 围 变 更 （ 含 业 务 范 围 变 更 ） \",\"id\":1754459081,\"companyGid\":2356920653}]}";
         System.out.println(getMD5String(body+key));
         System.out.println(body+key);
