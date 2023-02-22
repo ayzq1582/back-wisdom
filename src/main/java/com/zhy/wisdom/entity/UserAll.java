@@ -1,5 +1,8 @@
 package com.zhy.wisdom.entity;
 
+import lombok.Data;
+
+@Data
 public class UserAll {
     private Integer id;
 
