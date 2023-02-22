@@ -24,4 +24,8 @@ public class TestController extends BaseController{
         transactionalService.testTransactional();
         return buildResponse(1);
     }
+
+    public static void main(String[] args) {
+        System.out.println("哈哈哈，这周很成功啊！");
+    }
 }
