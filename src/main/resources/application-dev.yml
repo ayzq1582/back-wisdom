@@ -4,15 +4,15 @@ spring:
       primary: db1 # 配置默认数据库
       datasource:
         db1: # 数据源1配置
-          url: jdbc:mysql://localhost:3306/db_test?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+          url: jdbc:mysql://localhost:3306/original?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-        db2: # 数据源2配置
-          url: jdbc:mysql://localhost:3306/db_test_copy?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
-          username: root
-          password: root
-          driver-class-name: com.mysql.cj.jdbc.Driver
+        # db2: # 数据源2配置
+        #   url: jdbc:mysql://localhost:3306/db_test_copy?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+        #   username: root
+        #   password: root
+        #   driver-class-name: com.mysql.cj.jdbc.Driver
       durid:
         initial-size: 1 # 初始化时建立物理连接的个数
         max-active: 20 # 池中最大连接数
